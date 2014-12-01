@@ -25,7 +25,7 @@ export_env_dir $3
 # appears to this script as a parameter.
 
 if [ -z "$NGINX_VERSION" ]; then
-  NGINX_VERSION=1.4.2
+  NGINX_VERSION=1.6.0
 fi
 
 if [ -z "$PHP_VERSION" ]; then
@@ -37,13 +37,13 @@ if [ -z "$WORDPRESS_VERSION" ]; then
 fi
 
 if [ -z "$S3_BUCKET" ]; then
-  S3_BUCKET=heroku-buildpack-wordpress
+  S3_BUCKET=nvite-heroku-vendored-binaries
 fi
 
 # END CONFIG
 
 #
-NGINX_URL="https://s3.amazonaws.com/${S3_BUCKET}/nginx-${NGINX_VERSION}-heroku.tar.gz"
+NGINX_URL="https://s3.amazonaws.com/${S3_BUCKET}/nginx-${NGINX_VERSION}-heroku-ssl.tar.gz"
 PHP_URL="https://s3.amazonaws.com/${S3_BUCKET}/php-${PHP_VERSION}-with-fpm-heroku.tar.gz"
 WORDPRESS_URL="http://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"
 #
